@@ -132,7 +132,7 @@
   box-sizing: border-box;
 }
 
-body {
+/* body {
   margin: 0;
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
@@ -143,7 +143,32 @@ body {
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+} */
+ /* body {
+  margin: 0;
+  font-family: var(--bs-body-font-family);
+  font-size: var(--bs-body-font-size);
+  font-weight: var(--bs-body-font-weight);
+  line-height: var(--bs-body-line-height);
+  color: var(--bs-body-color);
+  text-align: var(--bs-body-text-align);
+  background-color: var(--bs-body-bg);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: #000000; /* converted to solid black 
+} */
+body {
+  margin: 0;
+  font-family: var(--bs-body-font-family);
+  font-size: var(--bs-body-font-size);
+  font-weight: var(--bs-body-font-weight);
+  line-height: var(--bs-body-line-height);
+  color: #f5f5f5; /* light text for readability */
+  text-align: var(--bs-body-text-align);
+  background-color: #2b0000; /* dark maroon/blackish background */
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: #000000;
 }
+
 
 hr {
   margin: 1rem 0;
@@ -15356,7 +15381,7 @@ img {
 .header-menu .mega-sub-menu > li.manu-banner img {
   width: 100%;
 }
-.header-menu .mega-sub-menu > li.manu-banner a::before {
+/* .header-menu .mega-sub-menu > li.manu-banner a::before {
   content: "";
   background: rgba(255, 255, 255, 0.3);
   bottom: 50%;
@@ -15369,10 +15394,25 @@ img {
   -ms-transition: all 900ms linear;
   -o-transition: all 900ms linear;
   transition: all 900ms linear;
+} */
+ .header-menu .mega-sub-menu > li.manu-banner a::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.3); /* dark tone instead of light */
+  bottom: 50%;
+  top: 50%;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  -webkit-transition: all 900ms linear;
+  -moz-transition: all 900ms linear;
+  -ms-transition: all 900ms linear;
+  -o-transition: all 900ms linear;
+  transition: all 900ms linear;
 }
+
 .header-menu .mega-sub-menu > li.manu-banner a::after {
   content: "";
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.3);
   left: 51%;
   right: 50%;
   top: 0;
@@ -17847,9 +17887,9 @@ img {
 }
 
 /*--
-/*  4.9 - Page Banner CSS
+/* /*  4.9 - Page Banner CSS
 /*----------------------------------------*/
-.page-banner {
+/*.page-banner {
   height: 550px;
   background-color: #ffebee;
   display: flex;
@@ -18119,6 +18159,92 @@ img {
   .shape-icon-box .box-content .box-wrapper i {
     font-size: 40px;
   }
+} */
+/*  4.9 - Page Banner CSS
+/*----------------------------------------*/
+.page-banner {
+  height: 550px;
+  background-color: #e0e0e0; /* slightly darker gray instead of #f4f4f4 */
+  display: flex;
+  align-items: center;
+  padding-top: 189px;
+  position: relative;
+  overflow: hidden;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px),
+only screen and (max-width: 767px) {
+  .page-banner {
+    height: 400px;
+    padding-top: 103px;
+  }
+}
+
+.page-banner-content .breadcrumb li {
+  font-size: 17px;
+  font-weight: 500;
+  color: #222; /* slightly darker than #333 */
+  position: relative;
+}
+.page-banner-content .breadcrumb li + li::before {
+  content: "//";
+  font-size: 17px;
+  font-weight: 500;
+  color: #555; /* slightly darker than #666 */
+  margin: 0 8px;
+}
+.page-banner-content .breadcrumb li.active {
+  color: #d10c12; /* slightly darker red than #e50914 */
+}
+
+.page-banner-content .title {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 0;
+  margin-top: 15px;
+  padding-bottom: 15px;
+  line-height: 1.6;
+  color: #0d0d0d; /* slightly darker black */
+}
+.page-banner-content .title span {
+  position: relative;
+  color: #d10c12; /* darker red highlight */
+}
+.page-banner-content .title span::before {
+  position: absolute;
+  content: "";
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 120px;
+  height: 13px;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+}
+
+.shape-icon-box .box-content {
+  width: 140px;
+  height: 140px;
+  text-align: center;
+  border: 1px solid rgba(209, 12, 18, 0.3); /* darker red border */
+  border-radius: 50%;
+  margin: 0 auto;
+  padding: 10px;
+}
+.shape-icon-box .box-content .box-wrapper {
+  background-color: #d10c12; /* darker red circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+.shape-icon-box .box-content .box-wrapper i {
+  font-size: 70px;
+  color: #fff;
+  display: block;
+  line-height: 1;
 }
 
 /*--
@@ -19401,9 +19527,9 @@ img {
 }
 
 /*--
-/*  4.16 - FAQ CSS
+/* /*  4.16 - FAQ CSS
 /*----------------------------------------*/
-.faq-tab-menu {
+/*.faq-tab-menu {
   background-color: #ffebee;
   padding: 25px 85px 40px;
   border-radius: 10px;
@@ -19514,6 +19640,136 @@ img {
 }
 .single-faq-item:hover .faq-title .title {
   color: red;
+}
+
+.faq-btn {
+  margin-top: 50px;
+} */
+/*  4.16 - FAQ CSS
+/*----------------------------------------*/
+.faq-tab-menu {
+  background-color: #111; /* deep black background */
+  padding: 25px 85px 40px;
+  border-radius: 10px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .faq-tab-menu {
+    padding: 25px 35px 40px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .faq-tab-menu {
+    padding: 15px 30px 30px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .faq-tab-menu {
+    padding: 15px 20px 30px;
+  }
+}
+
+.faq-tab-menu .nav li {
+  padding: 15px 15px 0;
+}
+@media only screen and (max-width: 575px) {
+  .faq-tab-menu .nav li {
+    padding: 15px 5px 0;
+  }
+}
+
+.faq-tab-menu .nav li button {
+  height: 60px;
+  line-height: 58px;
+  border: 1px solid rgba(255, 0, 0, 0.4);
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #eee; /* light gray text */
+  background-color: #1a1a1a; /* dark background */
+  transition: all 0.3s ease 0s;
+  padding: 0 20px;
+  white-space: nowrap;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .faq-tab-menu .nav li button {
+    width: 170px !important;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .faq-tab-menu .nav li button {
+    font-size: 13px;
+    height: 50px;
+    line-height: 48px;
+    padding: 0 12px;
+  }
+}
+
+.faq-tab-menu .nav li button.active,
+.faq-tab-menu .nav li button:hover {
+  border-color: #e50914; /* Netflix red */
+  color: #e50914;
+  background-color: #222;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (max-width: 767px) {
+  .faq-tab-menu .nav.nav-justified .nav-item,
+  .faq-tab-menu .nav.nav-justified .nav-link {
+    flex-grow: 0;
+  }
+}
+
+.faq-wrapper {
+  padding-top: 30px;
+}
+
+.single-faq-item {
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  background-color: #121212; /* dark card */
+  padding: 10px 70px 35px;
+  border-radius: 10px;
+  margin-top: 20px;
+  transition: all 0.3s ease 0s;
+}
+@media only screen and (max-width: 767px) {
+  .single-faq-item {
+    padding: 1px 45px 30px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .single-faq-item {
+    padding: 1px 30px 30px;
+  }
+}
+
+.single-faq-item .faq-title {
+  max-width: 330px;
+  margin-top: 25px;
+}
+
+.single-faq-item .faq-title .title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #f5f5f5; /* light text */
+  line-height: 1.5;
+  transition: all 0.3s ease 0s;
+}
+@media only screen and (max-width: 575px) {
+  .single-faq-item .faq-title .title {
+    font-size: 18px;
+  }
+}
+
+.single-faq-item .faq-text {
+  margin-top: 25px;
+  color: #ccc; /* softer gray for body text */
+}
+
+.single-faq-item:hover {
+  background-color: #1a1a1a;
+  border-color: #e50914; /* red border highlight */
+}
+.single-faq-item:hover .faq-title .title {
+  color: #e50914;
 }
 
 .faq-btn {
